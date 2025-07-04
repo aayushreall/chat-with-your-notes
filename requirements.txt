@@ -1,7 +1,8 @@
-openai
-langchain
-chromadb
 streamlit
+openai
+langchain==0.1.14
+chromadb
 pypdf
-tiktoken
 python-dotenv
+tiktoken
+
