@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
@@ -26,7 +26,7 @@ if uploaded_file:
     docs = text_splitter.split_documents(documents)
 
     embeddings = OpenAIEmbeddings()
-    vectorstore = Chroma.from_documents(docs, embeddings)
+    vectorstore = FAISS.from_documents(docs, embeddings)
 
     llm = ChatOpenAI(model_name="gpt-3.5-turbo")
     qa_chain = RetrievalQA.from_chain_type(
