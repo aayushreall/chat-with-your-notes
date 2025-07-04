@@ -1,7 +1,8 @@
 streamlit
 openai
 langchain==0.0.308
-chromadb
+chromadb==0.4.24
 pypdf
 python-dotenv
 tiktoken
+protobuf==4.23.4
